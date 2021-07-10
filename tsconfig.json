@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "build",
+    "outDir": "lib/esm",
     "module": "commonjs",
     "target": "es5",
     "lib": ["es6", "dom"],
@@ -13,11 +13,13 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationDir": "lib/types"
   },
   "exclude": [
     "node_modules",
-    "build",
+    "lib",
     "scripts",
     "acceptance-tests",
     "webpack",
