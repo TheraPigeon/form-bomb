@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../src/components/FormBuilder/config/index.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,IAAM,uBAAuB,GAAW,aAAa,CAAC;AAE7D,MAAM,CAAC,IAAM,WAAW,GAAe;IACrC,IAAI,EAAE;QACJ,KAAK,EAAE,MAAM;KACd;CACF,CAAC;AAEF,IAAM,aAAa,GAAkB;IACnC,IAAI,EAAE;QACJ,gBAAgB,EAAE,uBAAuB;KAC1C;CACF,CAAC;AAEF,eAAe,aAAa,CAAC"}
