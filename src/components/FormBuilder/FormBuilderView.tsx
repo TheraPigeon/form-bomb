@@ -1,18 +1,28 @@
 import React, { FC } from 'react';
+import { Formik, Form } from 'formik';
 
 import { BuilderConfig, BombConfig } from '../../interfaces';
-import { defaultSubmitButtonText } from './config';
+import { defaults } from './config';
+import BuildHeader from './components/BuildHeader';
+import { defaultBomb } from './config';
 
 interface IProps {
   config: BuilderConfig;
-  submit: () => void;
+  onSubmit: () => void;
 }
 
-const FormBuilderView: FC<IProps> = ({ config, submit }) => {
+const FormBuilderView: FC<IProps> = ({ config, onSubmit }) => {
   return (
-    <button onClick={submit}>
-      {config.meta.submitButtonText || defaultSubmitButtonText}
-    </button>
+    <div>
+      <Formik initialValues={defaultBomb} onSubmit={onSubmit}>
+        <Form>
+          <BuildHeader />
+          <button type="submit" onClick={onSubmit}>
+            {config.meta.submitText || defaults.submitText}
+          </button>
+        </Form>
+      </Formik>
+    </div>
   );
 };
 

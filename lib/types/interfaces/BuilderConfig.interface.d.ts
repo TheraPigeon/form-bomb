@@ -1,5 +1,5 @@
 interface MetaConfig {
-    submitButtonText?: string;
+    submitText?: string;
 }
 export default interface BuilderConfig {
     meta: MetaConfig;

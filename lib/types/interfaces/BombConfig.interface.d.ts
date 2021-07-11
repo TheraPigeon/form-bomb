@@ -1,5 +1,6 @@
 interface MetaConfig {
-    title: string;
+    title?: string;
+    description?: string;
 }
 export default interface BombConfig {
     meta: MetaConfig;

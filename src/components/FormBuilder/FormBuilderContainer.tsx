@@ -6,19 +6,19 @@ import FormBuilderView from './FormBuilderView';
 
 interface IProps {
   config?: BuilderConfig;
-  submit?: (config: BombConfig) => any;
+  onSubmit?: (config: BombConfig) => any;
 }
 
 const FormBuilderContainer: FC<IProps> = ({
   config = defaultBuilderConfig,
-  submit = (bomb: BombConfig) => {},
+  onSubmit = (bomb: BombConfig) => {},
 }) => {
   const [bomb, setBomb] = useState<BombConfig>(defaultBomb);
   const submitFn = () => {
-    submit(bomb);
+    onSubmit(bomb);
   };
 
-  return <FormBuilderView config={config} submit={submitFn} />;
+  return <FormBuilderView config={config} onSubmit={submitFn} />;
 };
 
 export default FormBuilderContainer;

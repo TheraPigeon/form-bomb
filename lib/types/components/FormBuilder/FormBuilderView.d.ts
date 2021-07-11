@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { BuilderConfig } from '../../interfaces';
 interface IProps {
     config: BuilderConfig;
-    submit: () => void;
+    onSubmit: () => void;
 }
 declare const FormBuilderView: FC<IProps>;
 export default FormBuilderView;

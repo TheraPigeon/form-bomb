@@ -1,16 +1,21 @@
 import { BuilderConfig, BombConfig } from '../../../interfaces';
 
-export const defaultSubmitButtonText: string = 'Create Form';
+export const defaults = {
+  submitText: 'Create Form',
+  formTitle: 'Untitled Form',
+  formDescription: 'Form description',
+};
 
 export const defaultBomb: BombConfig = {
   meta: {
-    title: 'Form',
+    title: defaults.formTitle,
+    description: defaults.formDescription,
   },
 };
 
 const defaultConfig: BuilderConfig = {
   meta: {
-    submitButtonText: defaultSubmitButtonText,
+    submitText: defaults.submitText,
   },
 };
 
