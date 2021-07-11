@@ -14,9 +14,10 @@ import BuildHeader from '../';
 import { defaults, defaultBomb } from '../../../config';
 import { renderWithFormikBuild } from '../../../../../utils';
 import { BombConfig } from '../../../../../interfaces';
+import { cloneDeep } from 'lodash';
 
 describe('BuildHeader', () => {
-  afterEach(() => cleanup());
+  afterEach(cleanup);
   const onSubmit = jest.fn();
 
   it('Displays a default form title when no title props is passed', () => {
@@ -29,7 +30,7 @@ describe('BuildHeader', () => {
 
   it('Displays a custom form title when title prop is passed', () => {
     const customTitle = 'Custom Title';
-    const values: BombConfig = { ...defaultBomb };
+    const values: BombConfig = cloneDeep(defaultBomb);
     values.meta.title = customTitle;
     renderWithFormikBuild(<BuildHeader />, onSubmit, values);
 
@@ -48,7 +49,7 @@ describe('BuildHeader', () => {
 
   it('Displays a custom form description when description prop is passed', () => {
     const customDescription = 'Custom Description';
-    const values: BombConfig = { ...defaultBomb };
+    const values: BombConfig = cloneDeep(defaultBomb);
     values.meta.description = customDescription;
     renderWithFormikBuild(<BuildHeader />, onSubmit, values);
 
@@ -59,7 +60,7 @@ describe('BuildHeader', () => {
 
   it('Displays the updated title value when the user types in the title input', async () => {
     const values: BombConfig = {
-      ...defaultBomb,
+      ...cloneDeep(defaultBomb),
       meta: { title: '', description: '' },
     };
     const newTitle = 'New Title';
@@ -76,7 +77,7 @@ describe('BuildHeader', () => {
 
   it('Displays the updated description value when the user types in the description input', async () => {
     const values: BombConfig = {
-      ...defaultBomb,
+      ...cloneDeep(defaultBomb),
       meta: { title: '', description: '' },
     };
     const newDescription = 'New Description';

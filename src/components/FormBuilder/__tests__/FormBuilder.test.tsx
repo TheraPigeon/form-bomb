@@ -5,15 +5,19 @@ import {
   waitFor,
   screen,
   act,
+  cleanup,
 } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 
 import FormBuilder from '../index';
-import { defaults } from '../config';
+import { defaultBomb, defaults } from '../config';
 import { BombConfig } from '../../../interfaces';
+import { cloneDeep } from 'lodash';
 
 describe('FormBuilder', () => {
+  afterEach(cleanup);
+
   describe('the UI', () => {
     it('should render a "Create Form" button', async () => {
       render(<FormBuilder />);
@@ -64,7 +68,10 @@ describe('FormBuilder', () => {
     });
 
     it('should pass the resulting BombConfig object to the submit callback function', async () => {
-      let val: BombConfig = { meta: { title: 'mockTitle' } };
+      let val: BombConfig = {
+        ...cloneDeep(defaultBomb),
+        meta: { title: 'mockTitle' },
+      };
       const submit = (config: BombConfig) => {
         val = config;
       };

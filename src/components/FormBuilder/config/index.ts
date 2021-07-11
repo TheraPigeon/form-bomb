@@ -1,9 +1,23 @@
 import { BuilderConfig, BombConfig } from '../../../interfaces';
+import { BombItemType, BombItem } from '../../../interfaces';
+
+const bombQuestion: BombItem = {
+  type: BombItemType.QUESTION,
+  name: 'Untitled Question',
+  description: 'Description (optional)',
+};
+const bombSection: BombItem = {
+  type: BombItemType.SECTION,
+  name: 'Untitled Section',
+  description: 'Description (optional)',
+};
 
 export const defaults = {
   submitText: 'Create Form',
   formTitle: 'Untitled Form',
-  formDescription: 'Form description',
+  formDescription: 'Description (optional)',
+  bombQuestion,
+  bombSection,
 };
 
 export const defaultBomb: BombConfig = {
@@ -11,6 +25,7 @@ export const defaultBomb: BombConfig = {
     title: defaults.formTitle,
     description: defaults.formDescription,
   },
+  items: [],
 };
 
 const defaultConfig: BuilderConfig = {

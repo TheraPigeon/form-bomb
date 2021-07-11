@@ -3,12 +3,12 @@ import { Formik, Form } from 'formik';
 
 import { BuilderConfig, BombConfig } from '../../interfaces';
 import { defaults } from './config';
-import BuildHeader from './components/BuildHeader';
+import { BuildHeader, Submit, Items, AddChoices } from './components';
 import { defaultBomb } from './config';
 
 interface IProps {
   config: BuilderConfig;
-  onSubmit: () => void;
+  onSubmit: (values: BombConfig) => any;
 }
 
 const FormBuilderView: FC<IProps> = ({ config, onSubmit }) => {
@@ -17,9 +17,9 @@ const FormBuilderView: FC<IProps> = ({ config, onSubmit }) => {
       <Formik initialValues={defaultBomb} onSubmit={onSubmit}>
         <Form>
           <BuildHeader />
-          <button type="submit" onClick={onSubmit}>
-            {config.meta.submitText || defaults.submitText}
-          </button>
+          <Items />
+          <AddChoices />
+          <Submit label={config.meta.submitText || defaults.submitText} />
         </Form>
       </Formik>
     </div>

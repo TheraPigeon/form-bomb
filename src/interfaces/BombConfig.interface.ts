@@ -1,3 +1,5 @@
+import { BombItem } from './BombItem.interface';
+
 interface MetaConfig {
   title?: string;
   description?: string;
@@ -5,4 +7,5 @@ interface MetaConfig {
 
 export default interface BombConfig {
   meta: MetaConfig;
+  items: BombItem[];
 }

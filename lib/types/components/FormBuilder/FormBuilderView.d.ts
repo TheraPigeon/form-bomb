@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { BuilderConfig } from '../../interfaces';
+import { BuilderConfig, BombConfig } from '../../interfaces';
 interface IProps {
     config: BuilderConfig;
-    onSubmit: () => void;
+    onSubmit: (values: BombConfig) => any;
 }
 declare const FormBuilderView: FC<IProps>;
 export default FormBuilderView;
