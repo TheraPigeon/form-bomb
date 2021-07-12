@@ -1,3 +1,5 @@
+import { ItemOption } from './ItemOption.interface';
+
 export enum BombItemType {
   SECTION = 'SECTION',
   QUESTION = 'QUESTION',
@@ -18,4 +20,5 @@ export interface BombItem {
   name: string;
   description?: string;
   format?: BombItemFormat;
+  options?: ItemOption[];
 }

@@ -41,7 +41,12 @@ describe('AddChoices', () => {
         user.click(button);
       });
 
-      expect(await screen.findByText('Untitled Question')).toBeInTheDocument();
+      const question = await screen.findByRole('textbox', {
+        name: 'questionName',
+      });
+
+      expect(question).toBeInTheDocument();
+      expect(question).toHaveValue('Untitled Question');
     });
   });
 
@@ -53,7 +58,11 @@ describe('AddChoices', () => {
         user.click(button);
       });
 
-      expect(await screen.findByText('Untitled Section')).toBeInTheDocument();
+      const section = await screen.findByRole('textbox', {
+        name: 'sectionName',
+      });
+      expect(section).toBeInTheDocument();
+      expect(section).toHaveValue('Untitled Section');
     });
   });
 });

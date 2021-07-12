@@ -34,7 +34,16 @@ describe('Build Items', () => {
 
   it('renders all build items', async () => {
     renderWithFormikBuild(<Items />, onSubmit, cloneDeep(values));
-    expect(await screen.findByText('Main Section')).toBeInTheDocument();
-    expect(await screen.findByText("What's your name?")).toBeInTheDocument();
+    const sectionName = await screen.findByRole('textbox', {
+      name: 'sectionName',
+    });
+    expect(sectionName).toBeInTheDocument();
+    expect(sectionName).toHaveValue('Main Section');
+
+    const question = await screen.findByRole('textbox', {
+      name: 'questionName',
+    });
+    expect(question).toBeInTheDocument();
+    expect(question).toHaveValue("What's your name?");
   });
 });

@@ -35,6 +35,18 @@ describe('FormBuilder', () => {
       expect(titleInput).toHaveValue(defaults.formTitle);
       expect(descriptionInput).toHaveValue(defaults.formDescription);
     });
+
+    it('should render an "Add Question" button', async () => {
+      render(<FormBuilder />);
+      const button = await screen.findByText('Add Question');
+      expect(button).toBeInTheDocument();
+    });
+
+    it('should render an "Add Section" button', async () => {
+      render(<FormBuilder />);
+      const button = await screen.findByText('Add Section');
+      expect(button).toBeInTheDocument();
+    });
   });
 
   describe('the create button', () => {

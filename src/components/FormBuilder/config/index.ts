@@ -1,10 +1,11 @@
 import { BuilderConfig, BombConfig } from '../../../interfaces';
-import { BombItemType, BombItem } from '../../../interfaces';
+import { BombItemType, BombItem, ItemOption } from '../../../interfaces';
 
 const bombQuestion: BombItem = {
   type: BombItemType.QUESTION,
   name: 'Untitled Question',
   description: 'Description (optional)',
+  options: [{ name: 'Option 1', value: 1 }],
 };
 const bombSection: BombItem = {
   type: BombItemType.SECTION,
