@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { FormBuilder } from './components';
+import FormBuilder from './components/FormBuilder';
 
 const FormBomb: FC = () => <div>FormBomb</div>;
 
