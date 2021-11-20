@@ -1,17 +1,18 @@
-import React, { FC } from 'react';
-import { Field } from 'formik';
+import React, { FC } from "react";
+import { Field } from "formik";
 
-import { BombItem } from '../../../../interfaces';
+import { BombItem } from "../../../../interfaces";
 
 interface IProps {
   item: BombItem;
+  name: string;
 }
 
-const Section: FC<IProps> = ({ item }) => {
+const Section: FC<IProps> = ({ item, name }) => {
   return (
     <div>
-      <Field aria-label="sectionName" value={item.name} />
-      <Field aria-label="sectionDesc" value={item.description} />
+      <Field name={name} aria-label="sectionName" value={item.name} />
+      <Field name={name} aria-label="sectionDesc" value={item.description} />
     </div>
   );
 };

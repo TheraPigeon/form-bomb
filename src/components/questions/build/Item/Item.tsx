@@ -1,22 +1,23 @@
-import React, { FC } from 'react';
+import React, { FC } from "react";
 
-import { BombItem, BombItemType, BombItemFormat } from '../../../../interfaces';
-import Section from '../Section';
-import { MultipleChoice } from '../questions';
+import { BombItem, BombItemType, BombItemFormat } from "../../../../interfaces";
+import Section from "../Section";
+import { MultipleChoice } from "../questions";
 
 interface IProps {
   item: BombItem;
+  name: string;
 }
 
-const Item: FC<IProps> = ({ item }) => {
+const Item: FC<IProps> = ({ item, name }) => {
   if (item.type === BombItemType.SECTION) {
-    return <Section item={item} />;
+    return <Section name={name} item={item} />;
   } else if (item.type === BombItemType.QUESTION) {
     switch (item.format) {
       case BombItemFormat.MULTIPLE_CHOICE:
-        return <MultipleChoice item={item} />;
+        return <MultipleChoice name={name} item={item} />;
       default:
-        return <MultipleChoice item={item} />;
+        return <MultipleChoice name={name} item={item} />;
     }
   }
 
