@@ -1,3 +1,3 @@
-import { FC } from 'react';
+import { FC } from "react";
 declare const Items: FC;
 export default Items;
