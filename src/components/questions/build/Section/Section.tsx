@@ -11,8 +11,18 @@ interface IProps {
 const Section: FC<IProps> = ({ item, name }) => {
   return (
     <div>
-      <Field name={name} aria-label="sectionName" value={item.name} />
-      <Field name={name} aria-label="sectionDesc" value={item.description} />
+      <Field
+        id={`${name}-id`}
+        name={name}
+        aria-label="sectionName"
+        value={item.name}
+      />
+      <Field
+        id={`${name}-id`}
+        name={name}
+        aria-label="sectionDesc"
+        value={item.description}
+      />
     </div>
   );
 };

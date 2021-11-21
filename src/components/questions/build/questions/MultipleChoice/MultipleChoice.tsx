@@ -11,6 +11,7 @@ const MultipleChoice: FC<IProps> = ({ item, name }) => {
   return (
     <div>
       <Field
+        id={`${name}-id`}
         name={name}
         type="text"
         aria-label="questionName"
@@ -19,6 +20,7 @@ const MultipleChoice: FC<IProps> = ({ item, name }) => {
       <div>
         {item.options?.map((option, i) => (
           <Field
+            id={`${name}-option-${i}`}
             name={`${name}-option-${i}`}
             type="text"
             key={i}
