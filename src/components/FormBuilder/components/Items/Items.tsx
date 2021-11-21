@@ -10,11 +10,7 @@ const Items: FC = () => {
   return (
     <div>
       {values.items.map((item, index) => (
-        <Item
-          name={`${item.type}-${item.name}-${index}`}
-          key={index}
-          item={item}
-        />
+        <Item key={index} item={item} />
       ))}
     </div>
   );
