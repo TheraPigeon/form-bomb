@@ -4,14 +4,14 @@ import { Field } from "formik";
 
 interface IProps {
   item: BombItem;
-  key: number;
+  position: number;
 }
 
-const MultipleChoice: FC<IProps> = ({ item, key }) => {
+const MultipleChoice: FC<IProps> = ({ item, position }) => {
   return (
     <div>
       <Field
-        name={`items[${key}].name`}
+        name={`items[${position}].name`}
         type="text"
         aria-label="questionName"
         value={item.name}
@@ -19,7 +19,7 @@ const MultipleChoice: FC<IProps> = ({ item, key }) => {
       <div>
         {item.options?.map((option, i) => (
           <Field
-            name={`items[${key}].options[${i}].name`}
+            name={`items[${position}].options[${i}].name`}
             type="text"
             key={i}
             aria-label={`questionOption${i}`}

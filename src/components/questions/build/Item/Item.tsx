@@ -6,18 +6,18 @@ import { MultipleChoice } from "../questions";
 
 interface IProps {
   item: BombItem;
-  key: number;
+  position: number;
 }
 
-const Item: FC<IProps> = ({ item, key }) => {
+const Item: FC<IProps> = ({ item, position }) => {
   if (item.type === BombItemType.SECTION) {
-    return <Section key={key} item={item} />;
+    return <Section position={position} item={item} />;
   } else if (item.type === BombItemType.QUESTION) {
     switch (item.format) {
       case BombItemFormat.MULTIPLE_CHOICE:
-        return <MultipleChoice key={key} item={item} />;
+        return <MultipleChoice position={position} item={item} />;
       default:
-        return <MultipleChoice key={key} item={item} />;
+        return <MultipleChoice position={position} item={item} />;
     }
   }
 
