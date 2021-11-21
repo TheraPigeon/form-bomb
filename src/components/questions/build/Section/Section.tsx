@@ -5,20 +5,19 @@ import { BombItem } from "../../../../interfaces";
 
 interface IProps {
   item: BombItem;
+  key: number;
 }
 
-const Section: FC<IProps> = ({ item }) => {
+const Section: FC<IProps> = ({ item, key }) => {
   return (
     <div>
       <Field
-        id={item.name}
-        name={item.name}
+        name={`items[${key}].name`}
         aria-label="sectionName"
         value={item.name}
       />
       <Field
-        id={item.description}
-        name={item.description}
+        name={`items[${key}].description`}
         aria-label="sectionDesc"
         value={item.description}
       />
