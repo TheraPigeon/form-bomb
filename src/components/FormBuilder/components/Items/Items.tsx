@@ -10,7 +10,7 @@ const Items: FC = () => {
   return (
     <div>
       {values.items.map((item, index) => (
-        <Item position={index} item={item} />
+        <Item key={`${item.name}-${index}`} position={index} item={item} />
       ))}
     </div>
   );
