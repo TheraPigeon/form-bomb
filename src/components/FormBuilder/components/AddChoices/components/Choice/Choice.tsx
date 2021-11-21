@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC } from "react";
 
 interface IProps {
   label: string;
@@ -7,7 +7,7 @@ interface IProps {
 
 const Choice: FC<IProps> = ({ label, onClick }) => {
   return (
-    <button type="button" onClick={onClick}>
+    <button className="button is-primary" type="button" onClick={onClick}>
       {label}
     </button>
   );

@@ -1,8 +1,8 @@
-import React, { FC, useEffect } from 'react';
-import { Field, useFormikContext } from 'formik';
+import React, { FC, useEffect } from "react";
+import { Field, useFormikContext } from "formik";
 
-import { defaults } from '../../config';
-import BombConfig from '../../../../interfaces/BombConfig.interface';
+import { defaults } from "../../config";
+import BombConfig from "../../../../interfaces/BombConfig.interface";
 
 const BuildHeader: FC = () => {
   const { values }: { values: BombConfig } = useFormikContext();
@@ -10,12 +10,14 @@ const BuildHeader: FC = () => {
   return (
     <div>
       <Field
+        className="input"
         type="text"
         name="meta.title"
         aria-label="title"
         value={values.meta.title}
       />
       <Field
+        className="input"
         type="text"
         name="meta.description"
         aria-label="description"

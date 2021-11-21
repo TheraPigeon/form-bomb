@@ -12,11 +12,13 @@ const Section: FC<IProps> = ({ item, position }) => {
   return (
     <div>
       <Field
+        className="input"
         name={`items[${position}].name`}
         aria-label="sectionName"
         value={item.name}
       />
       <Field
+        className="input"
         name={`items[${position}].description`}
         aria-label="sectionDesc"
         value={item.description}

@@ -33,6 +33,7 @@
     "@types/react": "^17.0.14"
   },
   "dependencies": {
+    "bulma": "^0.9.3",
     "formik": "^2.2.9",
     "lodash": "^4.17.21"
   }
